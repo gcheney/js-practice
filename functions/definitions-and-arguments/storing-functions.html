@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+    <head>
+    <title>A simple callback</title>
+    <meta charset="utf-8">
+    <link rel="stylesheet" type="text/css" href="../../assert/assert.css">
+    <script src="../../assert/assert.js"></script>
+    </head>
+    <body>
+    <script>
+        var store = {
+            newId: 1,
+            fnCache: {},
+            add: function(fn) {
+                if (!fn.id) {
+                    fn.id = this.newId++;
+                    this.fnCache[fn.id] = fn;
+                    return true
+                }
+            }
+        };
+        
+        function newFunction() { 
+            alert('I am the new function');
+        }
+
+        assert(store.add(newFunction), "Function stored.");
+        assert(!store.add(newFunction), "But it was only added once.");
+        store.fnCache[1](); //invoke the stored function
+    </script>
+    </body>
+</html>
