@@ -28,7 +28,20 @@
         assert(useless(function() { return text; }) === text, 
             "The useless function works anonymously! " + text);
             
-        report("After the calls have been made");           
+        report("Before sorting values");     
+
+        var values = [0, 3, 2, 5, 7, 4, 8, 1];
+
+        report(values.toString());
+
+        // sorting an array with a callback
+        values.sort(function(value1, value2) {
+            return value1 - value2;
+        });      
+
+        report("After sorting values");
+
+        report(values.toString());
     </script>
     </body>
 </html>
