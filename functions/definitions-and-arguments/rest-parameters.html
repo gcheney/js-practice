@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+    <head>
+    <title>Rest parameters</title>
+    <meta charset="utf-8">
+    <link rel="stylesheet" type="text/css" href="../../assert/assert.css">
+    <script src="../../assert/assert.js"></script>
+    </head>
+    <body>
+    <script>
+
+        // ES6 rest parameters
+        function multiMax(first, ...args) {
+            // sort arguments in descending order
+            
+            var sorted = args.sort(function(a, b){
+                return b - a;
+            });
+            
+            return first * sorted[0];
+        }
+        
+        assert(multiMax(3, 1, 2, 3) === 9, "3*3=9 using rest parameters");
+    </script>
+    </body>
+</html>

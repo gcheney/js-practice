@@ -10,15 +10,16 @@
     <script>
 
         // ES6 arrow function (lambda expression)
-        var greeting = name => 'Hi there, ' + name;
+        var greeting = name => 'Hi there, ' + name; // lambda expression with anonymous function
         assert(greeting('Glen') === 'Hi there, Glen', 'Glen was greeted');
 
         var anotherGreeting = function(name) {
             return 'Hi there, ' + name;
-        }
-        assert(greeting('Glen') === 'Hi there, Glen', 'Glen was greeted again');
+        };
+        assert(anotherGreeting('Glen') === 'Hi there, Glen', 'Glen was greeted again');
         
-        assert(greeting('Glen') === 'Hi there, Glen', 'Glen was greeted');
+        var thirdGreeting = name => anotherGreeting(name); // lambda expression using a named function
+        assert(thirdGreeting('Glen') === 'Hi there, Glen', 'Glen was greeted a third time');
     </script>
     </body>
 </html>
