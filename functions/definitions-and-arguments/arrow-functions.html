@@ -9,7 +9,16 @@
     <body>
     <script>
 
+        // ES6 arrow function (lambda expression)
+        var greeting = name => 'Hi there, ' + name;
+        assert(greeting('Glen') === 'Hi there, Glen', 'Glen was greeted');
+
+        var anotherGreeting = function(name) {
+            return 'Hi there, ' + name;
+        }
+        assert(greeting('Glen') === 'Hi there, Glen', 'Glen was greeted again');
         
+        assert(greeting('Glen') === 'Hi there, Glen', 'Glen was greeted');
     </script>
     </body>
 </html>
