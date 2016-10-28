@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+    <head>
+    <title>Default parameters</title>
+    <meta charset="utf-8">
+    <link rel="stylesheet" type="text/css" href="../../assert/assert.css">
+    <script src="../../assert/assert.js"></script>
+    </head>
+    <body>
+    <script>
+        "use strict"
+	    function performAction(person, action = "walking", message = person + " " + action) { 
+	            return message;
+	  	}
+
+		  assert(performAction("John") === "John walking",
+		         "The default value is used for John");
+
+		  assert(performAction("Jake", "running") === "Jake running",
+		         "Jake is not wlaking but running");
+    </script>
+    </body>
+</html>

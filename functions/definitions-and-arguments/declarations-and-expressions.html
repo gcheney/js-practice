@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
     <head>
-    <title>A simple callback</title>
+    <title>Declarations and expressions</title>
     <meta charset="utf-8">
     <link rel="stylesheet" type="text/css" href="../../assert/assert.css">
     <script src="../../assert/assert.js"></script>
@@ -22,14 +22,13 @@
                 return greeting;
             };
         };
-
-        (function namedFunctionExpression () {
-            console.log('Hi from the IIFE');
-        })();
     
         var greet = 'Hi from anonymous inner function';
         assert(myFuncExpression()(greet) === greet, 'Function Expression');
         assert(functionDeclaration() === 'Hi from the named inner function', 'Function Declaration');
+        assert((function immediatelyInvokedFunctionExpression () {
+            return 'Hi from the IIFE';
+        })() === 'Hi from the IIFE', 'Immediately Invoked Function Expression');
     </script>
     </body>
 </html>
