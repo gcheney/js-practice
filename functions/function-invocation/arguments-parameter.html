@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+    <head>
+    <title>Arguments parameter</title>
+    <meta charset="utf-8">
+    <link rel="stylesheet" type="text/css" href="../../assert/assert.css">
+    <script src="../../assert/assert.js"></script>
+    </head>
+    <body>
+    <script>
+        
+        // using the implicit arguments parameter
+        function sum() {
+            var sum = 0;
+            
+            for (var i = 0; i < arguments.length; i++) {
+                sum += arguments[i];
+            }
+            
+            return sum;
+        }
+        
+        
+        assert(sum(1, 2) === 3, "We can add two numbers");
+        assert(sum(1, 2, 3) === 6, "We can add three numbers");
+        assert(sum(1, 2, 3, 4) === 10, "We can add four numbers");
+        
+        // using rest parameters allows for use of Array prototype functions
+        function newSum(...args) {
+            return args.reduce(function(a, b) {
+                return a + b;
+            }, 0);
+        }
+        
+        assert(newSum(1, 2) === 3, "We can add two numbers");
+        assert(newSum(1, 2, 3) === 6, "We can add three numbers");
+        assert(newSum(1, 2, 3, 4) === 10, "We can add four numbers");
+        
+    </script>
+    </body>
+</html>
