@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+    <head>
+    <title>Function and method invocation</title>
+    <meta charset="utf-8">
+    <link rel="stylesheet" type="text/css" href="../../assert/assert.css">
+    <script src="../../assert/assert.js"></script>
+    </head>
+    <body>
+    <script>
+        
+        function whatsMyContext() {
+            return this;
+        }
+
+        assert(whatsMyContext() === window, "Function call on window");
+
+        var getMyContext = whatsMyContext;
+
+        assert(getMyContext() === window, "Another function call in window");
+
+        var object1 = {
+            getMyContext: whatsMyContext
+        };
+
+        assert(object1.getMyContext() === object1, "Working with the 1st object");
+
+        var object2 = {
+            getMyContext: whatsMyContext
+        };
+
+        assert(object2.getMyContext() === object2, "Working with 2nd object");
+        
+    </script>
+    </body>
+</html>
