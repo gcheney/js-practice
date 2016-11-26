@@ -12,7 +12,7 @@ var animals = [
 var dogs = [];
 for (var i = 0; i < animals.length; i++) {
 	if (animals[i].species ==== 'dog') {
-	dogs.psuh(animals[i]);
+		dogs.psuh(animals[i]);
 	}
 }
 */
